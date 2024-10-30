@@ -31,4 +31,9 @@ public class SerieController {
     public SerieDTO obterPorId(@PathVariable Long id) {
         return service.obterPorId(id);
     }
+
+    @GetMapping("/lancamentos")
+    public List<SerieDTO> obterLancamentos() {
+        return service.obterLancamentos();
+    }
 }

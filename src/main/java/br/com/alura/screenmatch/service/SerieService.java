@@ -12,6 +12,7 @@ import java.util.stream.Collectors;
 
 @Service
 public class SerieService {
+
     @Autowired
     private SerieRepository repository;
 
@@ -50,5 +51,9 @@ public class SerieService {
                     s.getSinopse());
         }
         return null;
+    }
+
+    public List<SerieDTO> obterLancamentos() {
+        return converteDados(repository.encontrarEpisodiosMaisRecentes());
     }
 }
